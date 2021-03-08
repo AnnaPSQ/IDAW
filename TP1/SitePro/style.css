@@ -1,0 +1,47 @@
+h1 {
+    color : palevioletred;
+}
+
+
+
+.conteneur-flexible{
+    display: flex;
+    font-size: 20px;
+    background-color: #0AD; /*Bleu*/
+    border: 2px solid blue;
+    box-sizing: border-box;
+    margin: 10px 0px;
+}
+.colonne{
+    flex-flow: column wrap;
+    height: 300px;
+}
+.debut{
+    justify-content: flex-start;
+}
+.fin{
+    justify-content: flex-end;
+}
+.centre{
+    justify-content: center;
+}
+.space-between{
+    justify-content: space-between;
+}
+.space-around{
+    justify-content: space-around;
+}
+.space-evenly{
+    justify-content: space-evenly;
+}
+.element-flexible{
+    flex: 0 0 10%;
+    width: 25%;
+    height: 25%;
+    background-color: #0DA; /*Vert*/
+    padding: 0px;
+    text-align: center;
+    border: 2px solid green;
+    box-sizing: border-box;
+    margin: 5px;
+}
