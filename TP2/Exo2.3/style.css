@@ -5,12 +5,12 @@ html,body {
 }
 
 #cucure {
-	border-radius:4px 4px 1px 1px;
+	border-radius:1px 1px 1px 1px;
 	left:130px;
 	bottom:20px;
 	height:15px;
 	width:50px;
-	background-image: url("images/lingo.jpg");
+	background-image: url("images/antowane_pave.jpg");
 	position:absolute;
 	border:solid 1px;
 }
@@ -149,7 +149,7 @@ span {
 	height:400px;
 	width:600px;
 	background:gray;
-	background-image:url("images/ciel.jpg");
+	background-image:url("images/Antoine.jpg");
 	margin:auto;
 	border:solid 2px white;
 }
