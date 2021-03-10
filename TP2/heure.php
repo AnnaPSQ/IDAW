@@ -17,11 +17,22 @@
         <h2> Et Là j'affiche un tableau. </h2>
 
         <?php
-            $array = array(
-            "foo" => "bar",
-            "bar" => "foo",
-        );
+            $semaine = array();
+            $semaine[0] = "lundi"; 
+            $semaine[1] = "mardi"; 
+            $semaine[2] = "mercredi";
+            $semaine[3] = "jeudi";
+            $semaine[4] = "vendredi";
+            $semaine[5] = "t'as compris le principe";
+
+            for ($i=0; $i<6; $i++) {
+                echo "$semaine[$i] <br>"; // Avec insertion d'un espace entre 2 valeurs
+            }
+
+            print_r($semaine);
         ?>
+
         <h2> Et ici je sais pas encore. </h2>
+        
     </body>
 </html>
