@@ -10,6 +10,7 @@ require_once('template_header.php');
 
             <?php
             require_once('template_menu.php');
+            renderMenuToHTML('hobbies');
             ?>
             
             <h2>Venez découvrir mes hobbies !</h2>

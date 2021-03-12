@@ -10,7 +10,9 @@ require_once('template_header.php');
 
             <?php
             require_once('template_menu.php');
+            renderMenuToHTML('index');
             ?>
+
             
             <h2>Des renseignements sur ma personne disponibles sur ce site !</h1>
             <p> Trop sympa ! </p>

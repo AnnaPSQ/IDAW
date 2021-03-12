@@ -1,9 +1,35 @@
-<nav class="menu">
-                <ul>  
+<?php
+    function renderMenuToHTML($currentPageId) {
+        // un tableau qui d\'efinit la structure du site
+        $mymenu = array(
+            // idPage titre
+            'index' =>  'Accueil' ,
+            'cv' =>  'Cv' ,
+            'hobbies' => 'Mes Hobbies',
+            'infos_technique' => 'Informations'
+            );
+        // ...
+        echo "<nav class=\"menu\">";
+            echo"<ul> " ;
             
-                <li><a href="index.php">Accueil</a></div></li>
-                <li><a href="cv.php">CV</a></div></li>
-                <li><a href="hobbies.php">Hobbies</a></div></li>
-                <li><a href="infos_technique.php">Infos</a></div></li>
-                </ul>
-</nav>
+            foreach($mymenu as $pageId => $pageParameters) {
+                echo"<li>";
+                if($currentPageId == $pageId) {
+                    echo" <a  id=\"currentpage\" href= $pageId >";
+                    echo $pageParameters;
+                    echo" </a>";
+                }
+
+                else{
+                    echo" <a href= $pageId > ";
+                    echo $pageParameters; 
+                    echo"</a> ";
+                }
+                echo"</li>";
+            }
+            echo"</ul>"; 
+        echo"</nav>";
+        
+        // ...
+    }
+?>
