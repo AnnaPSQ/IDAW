@@ -1,6 +1,12 @@
 <?php
 require_once('template_header.php');
 ?>
+
+        <header>
+                <h1>
+                    Informations
+                </h1>
+            </header>
     <?php
     require_once('template_menu.php');
     ?>
