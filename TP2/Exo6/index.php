@@ -10,7 +10,14 @@
         $currentLang = $_GET['lang'];
     } 
 
-    require_once("$currentLang/template_header.php");
+    require_once("template_header.php");
+    
+    if($_GET['lang']=='fr'){
+        echo"<button><a href= index.php?page=$currentPageId&lang=en >Anglais </a></button>";
+    }
+    else{
+        echo"<button><a href= index.php?page=$currentPageId&lang=fr >French </a></button>";
+    }
 ?>
 
 <?php
@@ -20,10 +27,12 @@ require_once("template_menu.php");
 <section class="corps">
 <?php
     $pageToInclude = "$currentLang/$currentPageId.php";
-    if(is_readable($pageToInclude))
+    if(is_readable($pageToInclude)){
     require_once($pageToInclude);
-    else
+    }
+    else{
     require_once("error.php");
+    }
 ?>
 </section>
 <?php
