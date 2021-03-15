@@ -1,12 +1,12 @@
-<form id="style_form" action="index.php" method="GET">
-    <select name="style">
-        <option value="style1">style1</option>
-        <option value="style2">style2</option>
-    </select>
-    <input type="submit" value="Appliquer" />
-</form>
-
 <?php
+
+    $currentStyle = "style1";
+    if(isset($_GET['css'])){
+        $currentStyle = $_GET['css'];
+    }
+
+    require_once("template_header.php");
+
     $currentPageId = 'accueil';
     if(isset($_GET['page'])) {
         $currentPageId = $_GET['page'];
@@ -16,8 +16,6 @@
     if(isset($_GET['lang'])) {
         $currentLang = $_GET['lang'];
     } 
-
-    require_once("template_header.php");
     
     if($currentLang=='fr'){
         echo"<button><a href= index.php?page=$currentPageId&lang=en >Anglais </a></button>";
@@ -25,12 +23,12 @@
     else{
         echo"<button><a href= index.php?page=$currentPageId&lang=fr >French </a></button>";
     }
-?>
 
-<?php
-require_once("template_menu.php");
+
+    require_once("template_menu.php");
     renderMenuToHTML($currentPageId,$currentLang);
 ?>
+
 <section class="corps">
 <?php
     $pageToInclude = "$currentLang/$currentPageId.php";
@@ -41,6 +39,14 @@ require_once("template_menu.php");
     require_once("error.php");
     }
 ?>
+<form id="style_form" action="index.php" method="GET">
+    <select name="css">
+        <option value="style1">style1</option>
+        <option value="style2">style2</option>
+    </select>
+    <input type="submit" value="Appliquer" />
+</form>
+
 </section>
 <?php
     require_once("$currentLang/template_footer.php");

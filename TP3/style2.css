@@ -1,29 +1,30 @@
 h1 {
-    color : rgb(177, 32, 80);
+    color : rgb(58, 107, 241);
 }
 
 h2 {
-    color :rgb(141, 28, 66)
+    color :rgb(43, 18, 185)
 }
 
 h3 {
-    color :rgb(88, 17, 41)
+    color :rgb(26, 7, 78)
 }
 
 #currentpage{
-    color : rgb(218, 23, 136);
+    color : rgb(107, 208, 255);
 }
 
 a{
-    color :rgb(183, 28, 197);
+    color :rgb(74, 183, 255);
 }
 
 p{
-    color : rgb(253, 204, 234)
+    color : rgb(175, 243, 255)
 }
 
 option{
-    color : black;
+    color : rgb(0, 6, 63);
+    background-color: yellow;
 }
 
 
@@ -37,13 +38,14 @@ nav ul{
 nav ul li{
     flex: 1 1 20%;
     margin: 0px 10px;
-    background-color: rgb(88, 17, 41);
+    background-color: rgb(255, 192, 97);
 }
   
 nav ul li a{
+
     display: block;
     text-decoration: none;
-    color: inherit;
+    color: white;
 }
 
 body{
@@ -57,7 +59,8 @@ body{
 }
 
 button{
-    color: rgb(168, 24, 68);
+    background-color : rgb(41, 33, 158);
+    color: rgb(255, 212, 95);
     margin: 10px 10px;
 
 }
