@@ -16,6 +16,8 @@
         else{
             $i = 1;
         }
+
+        
         echo "<nav class=\"menu\">";
             echo"<ul> " ;
             
