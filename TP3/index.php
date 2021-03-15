@@ -1,5 +1,12 @@
-<?php
+<form id="style_form" action="index.php" method="GET">
+    <select name="style">
+        <option value="style1">style1</option>
+        <option value="style2">style2</option>
+    </select>
+    <input type="submit" value="Appliquer" />
+</form>
 
+<?php
     $currentPageId = 'accueil';
     if(isset($_GET['page'])) {
         $currentPageId = $_GET['page'];
