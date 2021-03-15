@@ -27,11 +27,7 @@ option{
 }
 
 
-*{
-    font-family: Avenir, sans-serif;
-    color: rgb(255, 255, 255);
-    padding: 0px;
-  }
+
 nav ul{
     display: flex;
     list-style-type: none;
