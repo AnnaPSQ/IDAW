@@ -12,7 +12,7 @@
 
     require_once("template_header.php");
     
-    if($_GET['lang']=='fr'){
+    if($currentLang=='fr'){
         echo"<button><a href= index.php?page=$currentPageId&lang=en >Anglais </a></button>";
     }
     else{
