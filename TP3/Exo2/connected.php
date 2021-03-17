@@ -1,10 +1,8 @@
 <?php
+
+    require_once("testConnexion.php");
     // on simule une base de données
-    $users = array(
-        // login => password
-        'riri' => 'fifi',
-        'yoda' => 'maitrejedi',
-        'anna' => 'antoine' );
+    $users = $resultat;
     $login = "anonymous";
     $errorText = "";
     $successfullyLogged = false;

@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Connexion base de données</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="cours.css">
+        <title>MySQL</title>
+        <meta charset='utf-8'>
     </head>
     <body>
         <h1>Bases de données MySQL</h1>  
         <?php
-            $servername = 'localhost';
-            $username = 'root';
-            $password = '';
+            $servname = "localhost"; $dbname = "idaw"; $user = "root"; $pass = "";
             
-            //On établit la connexion
-            $conn = new mysqli($servername, $username, $password);
-            
-            //On vérifie la connexion
-            if($conn->connect_error){
-                die('Erreur : ' .$conn->connect_error);
+            try{
+                $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+                $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                /*Sélectionne les valeurs dans les colonnes prenom et mail de la table
+                 *users pour chaque entrée de la table*/
+                $sth = $dbco->prepare("SELECT * FROM UTILISATEURS");
+                $sth->execute();
+                
+                /*Retourne un tableau associatif pour chaque entrée de notre table
+                 *avec le nom des colonnes sélectionnées en clefs*/
+                $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
+                
+                /*print_r permet un affichage lisible des résultats,
+                 *<pre> rend le tout un peu plus lisible*/
+                echo '<pre>';
+                print_r($resultat);
+                print_r($resultat[0]['id']);
+                echo '</pre>';
             }
-            echo 'Connexion réussie';
+                  
+            catch(PDOException $e){
+                echo "Erreur : " . $e->getMessage();
+            }
         ?>
     </body>
 </html>
