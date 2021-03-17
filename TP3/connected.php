@@ -22,9 +22,6 @@
         }
     }
 
-    else{
-        $errorText = "Merci d'utiliser le formulaire de login";
-    }
     if(!$successfullyLogged) {
         echo $errorText;
     }
