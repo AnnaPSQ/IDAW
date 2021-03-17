@@ -2,8 +2,6 @@
 
     session_start();
 
-    $currentLogin = $_SESSION['login'];
-
     $currentStyle = "style1";
 
     if(isset($_COOKIE['cstyle'])){
@@ -28,8 +26,17 @@
     require_once("connected.php");
     require_once("template_header.php");
 
-    echo $currentLogin;
-    require_once("login.php");
+    if ($_SESSION== array()){
+        require_once("login.php");
+    }
+
+    else{
+        $currentLogin = $_SESSION['login'];
+        echo "<center> Vous êtes connectés en tant que ".$currentLogin."</center>";
+        echo "<form method='post' action='deconnexion.php'>
+                <input type='submit' value='Se déconnecter' />
+                </form>" ;
+    }
 
 
     if($currentLang=='fr'){
@@ -39,10 +46,6 @@
         echo"<button><a href= index.php?page=$currentPageId&lang=fr >French </a></button>";
     }
 ?>
-
-<form method="post" action="deconnexion.php">
-   <input type="submit" value="Se déconnecter" />
-</form>
 
 <form id="style_form" action="index.php" method="GET">
     <select name="css">

@@ -1,3 +1,4 @@
+<center>
 <form id="login_form" action="index.php" method="POST">
     <table>
         <tr>
@@ -14,5 +15,6 @@
         </tr>
     </table>
 </form>
+</center>
 
 
