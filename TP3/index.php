@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+
     $currentLogin = $_SESSION['login'];
 
     $currentStyle = "style1";
@@ -26,6 +27,7 @@
 
     require_once("connected.php");
     require_once("template_header.php");
+
     echo $currentLogin;
     require_once("login.php");
 
@@ -37,6 +39,10 @@
         echo"<button><a href= index.php?page=$currentPageId&lang=fr >French </a></button>";
     }
 ?>
+
+<form method="post" action="deconnexion.php">
+   <input type="submit" value="Se déconnecter" />
+</form>
 
 <form id="style_form" action="index.php" method="GET">
     <select name="css">
