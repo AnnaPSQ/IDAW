@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>MySQL</title>
-        <meta charset='utf-8'>
-    </head>
-    <body>
-        <h1>Bases de données MySQL</h1>  
-        <?php
+<?php
             $servname = "localhost"; $dbname = "idaw"; $user = "root"; $pass = "";
             
             try{
@@ -33,6 +25,4 @@
             catch(PDOException $e){
                 echo "Erreur : " . $e->getMessage();
             }
-        ?>
-    </body>
-</html>
+?>

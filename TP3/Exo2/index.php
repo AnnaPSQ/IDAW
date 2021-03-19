@@ -23,6 +23,25 @@
         $currentLang = $_GET['lang'];
     } 
 
+    $servname = "localhost"; $dbname = "idaw"; $user = "root"; $pass = "";
+    $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['pseudo'])) {
+            $newLogin=$_POST['login'];
+            $newPwd=$_POST['password'];
+            $newPseudo = $_POST['pseudo'];
+
+            $sql = "INSERT INTO UTILISATEURS(login , password, pseudo) 
+                    VALUES($newLogin, $newPwd, $newPseudo)";
+
+            $dbco->exec($sql);
+            echo 'Entrée ajoutée dans la table';
+    }
+    else{
+        echo " Merci de remplir le formulaire d'inscription";
+    }
+
+
     require_once("connected.php");
     require_once("template_header.php");
 
@@ -37,7 +56,20 @@
                 <input type='submit' value='Se déconnecter' />
                 </form>" ;
     }
+?>
 
+<center>
+<form id="inscription_form" action="inscription.php" method="POST">
+    <table>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="S'inscrire" /></td>
+        </tr>
+    </table>
+</form>
+</center>
+
+<?php
 
     if($currentLang=='fr'){
         echo"<button><a href= index.php?page=$currentPageId&lang=en >Anglais </a></button>";
