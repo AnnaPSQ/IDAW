@@ -35,10 +35,6 @@
                     VALUES($newLogin, $newPwd, $newPseudo)";
 
             $dbco->exec($sql);
-            echo 'Entrée ajoutée dans la table';
-    }
-    else{
-        echo " Merci de remplir le formulaire d'inscription";
     }
 
 

@@ -16,10 +16,10 @@
                 
                 /*print_r permet un affichage lisible des résultats,
                  *<pre> rend le tout un peu plus lisible*/
-                echo '<pre>';
-                print_r($resultat);
-                print_r($resultat[0]['id']);
-                echo '</pre>';
+                // echo '<pre>';
+                // print_r($resultat);
+                // print_r($resultat[0]['id']);
+                // echo '</pre>';
             }
                   
             catch(PDOException $e){

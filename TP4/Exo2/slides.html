@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>SlideJs</title>
+		<link rel="stylesheet" type="text/css" href="style_slide.css"/>
+	</head>
+	<body>
+        <center><h1> Voici mon diaporama !</h1></center>
+        <center><h2> Apprenez en plus sur les dates en JavaScript.</h2></center>
+		<section>
+   
+				<div id="slide_normal">
+					<ul>
+                                <li><img src="img/slide1.png"></li>
+                                <li><img src="img/slide2.png"></li>
+                                <li><img src="img/slide3.png"></li>
+                                <li><img src="img/slide4.png"></li>
+                                <li><img src="img/slide5.png"></li>
+					</ul>
+			    </div>
+		</section>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/slidejs.js"></script>
+		<script>
+			$("#slide_normal").slidejs({
+                width: 940,
+                height: 528
+            });
+		</script>
+	</body>
+</html>
