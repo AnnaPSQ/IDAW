@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Antoine</title>
+        <link rel="stylesheet" href="style.css" type="text/css"
+        media="screen" title="default" charset="utf-8"/>
+        <meta charset = "utf-8" />
+        <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <table class = "tableau-formulaire">
+            <thead>
+                <tr>
+                    <th>Nom </th>
+                    <th>Prenom </th>
+                    <th>Date de naissance </th>
+                    <th>Message </th>
+                    <th>Adore le cours </th>
+                </tr>
+            </thead>
+
+            <tbody id = "table_content">
+                <tr>
+                    <td>Pasquier</td>
+                    <td>Anna</td>
+                    <td>27/05/1999</td>
+                    <td>J'adore Antoine Goron</td>
+                    <td>vrai</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <form onsubmit="onFormSubmit();" autocomplete="off">
+            <p>Nom <input type="text" id="IDnom" name="name"></p>
+            <p>Prenom <input type="text" id="IDprenom" name="name"></p>
+            <p>Date de naissance <input type="date" id="IDdate" name="name"> </p>
+            <p>Message: <br><textarea id="IDmessage" name="message"></textarea></p>
+            <input type="checkbox" id="adore" name="name"> <label for="Adore">Adorez-vous le cours?</label>
+            <p><button type="submit">Submit</button></p>
+        </form>
+
+        <script>
+            function onFormSubmit() {
+            // prevent the form to be sent to the server
+            event.preventDefault();
+            resultat = "Ui, j'adore !"
+            if(!$("#adore").prop("checked")){
+                resultat = "Non, je déteste."
+            }
+            if($("#IDnom").val() != '' ){
+                $("#table_content").append("<tr> <td>" + $("#IDnom").val() + "</td> <td>" + $("#IDprenom").val() + "</td>  <td>" + $("#IDdate").val() + "</td>  <td>" + $("#IDmessage").val() + "</td> <td>" + resultat + "</td> </tr>");
+            }
+            else{
+                
+            }
+            }
+        </script>
+    </body>
+</html>
