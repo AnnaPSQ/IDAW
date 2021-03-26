@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Antoine</title>
+        <title>CRUD</title>
         <link rel="stylesheet" href="style.css" type="text/css"
         media="screen" title="default" charset="utf-8"/>
         <meta charset = "utf-8" />
@@ -32,9 +32,9 @@
         </table>
 
         <form onsubmit="onFormSubmit();" autocomplete="off">
-            <p>Nom <input type="text" id="IDnom" name="name"></p>
-            <p>Prenom <input type="text" id="IDprenom" name="name"></p>
-            <p>Date de naissance <input type="date" id="IDdate" name="name"> </p>
+            <p><br id="removable"/>Nom <br><input type="text" id="IDnom" name="name"> </p>
+            <p>Prenom <br><input type="text" id="IDprenom" name="name"></p>
+            <p>Date de naissance <br><input type="date" id="IDdate" name="name"> </p>
             <p>Message: <br><textarea id="IDmessage" name="message"></textarea></p>
             <input type="checkbox" id="adore" name="name"> <label for="Adore">Adorez-vous le cours?</label>
             <p><button type="submit">Submit</button></p>
@@ -44,7 +44,8 @@
             function onFormSubmit() {
             // prevent the form to be sent to the server
             event.preventDefault();
-            resultat = "Ui, j'adore !"
+            $("p").remove("#removable");
+            resultat = "Ui, j'adore !";
             if(!$("#adore").prop("checked")){
                 resultat = "Non, je déteste."
             }
@@ -52,7 +53,7 @@
                 $("#table_content").append("<tr> <td>" + $("#IDnom").val() + "</td> <td>" + $("#IDprenom").val() + "</td>  <td>" + $("#IDdate").val() + "</td>  <td>" + $("#IDmessage").val() + "</td> <td>" + resultat + "</td> </tr>");
             }
             else{
-                
+                $("#removable").before("<p style = 'color : red' >Merci de remplir le champ Nom</p>");
             }
             }
         </script>
